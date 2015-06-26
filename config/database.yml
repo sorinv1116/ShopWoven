@@ -1,0 +1,28 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+
+development:
+  <<: *default
+  database: ShopWoven_development
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 3306
+
+test:
+  <<: *default
+  database: ShopWoven_test
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 3306
+
+
+production:
+  <<: *default
+  database: ShopWoven_production
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 3306
