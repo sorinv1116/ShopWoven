@@ -6,15 +6,15 @@
         .panel-heading
           h3.panel-title Sign Up
         .panel-body
-          form action="login" method="GET"
+          = form_for @shop, url: '/login' do |f|
             fieldset
               .form-group
-                input.form-control name="email" placeholder="yourmail@example.com" type="text" /
+                = f.text_field :owner_email, placeholder: "yourmail@example.com", class: 'form-control'
               .form-group
-                input.form-control name="password" placeholder="Password" type="password" value="" /
+                = f.password_field :owner_password, placeholder:"Password", class: 'form-control'
               .form-group
                 .input-group
-                  input.form-control name="cname" placeholder="blabla" type="text" value=""
+                  = f.text_field :shopify_domain, placeholder: "blabla", class: 'form-control'
                   .input-group-addon .myshopify.com
-              input.btn.btn-lg.btn-success.btn-block type="submit" value="Sign Up"
+              = f.submit "Sign Up", class: 'btn btn-lg btn-success btn-block'
    

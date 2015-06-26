@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150626195725) do
 
   create_table "shops", force: :cascade do |t|
     t.string   "shopify_domain", limit: 255, null: false
-    t.string   "shopify_token",  limit: 255, null: false
+    t.string   "shopify_token",  limit: 255
     t.string   "owner_email",    limit: 255, null: false
     t.string   "owner_password", limit: 255, null: false
     t.datetime "created_at"
