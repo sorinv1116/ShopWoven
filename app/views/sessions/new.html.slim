@@ -6,15 +6,16 @@
         .panel-heading
           h3.panel-title Sign Up
         .panel-body
-          = form_for @shop, url: '/login' do |f|
+          = form_for @store, url: '/login', as: :store do |f|
             fieldset
               .form-group
-                = f.text_field :owner_email, placeholder: "yourmail@example.com", class: 'form-control'
+                = f.text_field :email, placeholder: "yourmail@example.com", class: 'form-control'
               .form-group
-                = f.password_field :owner_password, placeholder:"Password", class: 'form-control'
+                = f.password_field :password, placeholder:"Password", class: 'form-control'
               .form-group
                 .input-group
-                  = f.text_field :shopify_domain, placeholder: "blabla", class: 'form-control'
+                  input.form-control type="text" name="cname" placeholder="blabla" ng-model="cname"
                   .input-group-addon .myshopify.com
+                input type="hidden" name="shop" ng-value="cname + '.myshopify.com'"
               = f.submit "Sign Up", class: 'btn btn-lg btn-success btn-block'
    

@@ -30,3 +30,7 @@ group :production do
   gem 'rails_12factor'
   gem 'thin'
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+end
